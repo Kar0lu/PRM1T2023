@@ -4,6 +4,10 @@ from matplotlib.animation import FuncAnimation
 
 # Animation Section 
 def search_animation(graph, hist, bp, SPEED):
+    # graph - graph that we want to animate
+    # hist - history of steps from search algorythm
+    # bp (backwards-path) - path from node that we were looking for to base node of graph
+    # SPEED - time of interval in ms
 
     pos = nx.spring_layout(graph)
     fig, ax = plt.subplots()

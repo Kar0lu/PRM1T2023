@@ -1,6 +1,7 @@
 from generate_graph import generate_random_graph
 from breadth_first_search import breadth_first_search
 from my_animations import search_animation
+import pprint
 
 # Variables section
 NUMBER_OF_NODES = 50
@@ -15,6 +16,8 @@ random_graph = generate_random_graph(NUMBER_OF_NODES, NUMBER_OF_EDGES_PER_NODE)
 
 history, back_path = breadth_first_search(START_NODE, random_graph, SEARCH_FOR_NODE)
 # history2, back_path2 = breadth_first_search(START_NODE, random_graph2, SEARCH_FOR_NODE)
+
+pprint.pprint(history)
 
 search_animation(random_graph, history, back_path, SPEED)
 # search_animation(random_graph2, history2, back_path2)

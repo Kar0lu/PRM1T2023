@@ -1,30 +1,34 @@
 # Search section
 def backwards_search(visited):
+    # visited - stack of visited nodes
+    # bp (backwards_path) - array with path from node that we were looking for to base node of graph
+
     finish = visited[0][1]
     next = visited[-1][0]
-    ps = [visited[-1][1], next]
+    bp = [visited[-1][1], next]
 
     for x in visited[::-1]:
         if(x[1] == next):
             next = x[0]
-            ps.append(next)
+            bp.append(next)
             if(next == finish):
                 break
 
-    return ps
+    return bp
 
 def breadth_first_search(start, graph, search):
-    # stack[n] = [visited node, to be visited node]
-    # visited[n] = [previous node, visited node]
+    # start - node to start
+    # graph - graph that we're searching
+    # search - node to find
+    # stack - stack of nodes that algorythm will check
+    # visited - stack nodes that algorythm checked
+    # step - variable to store information about steps of algorythm, used in history
+    # history - dictionary with information about algorythm on every step
 
     stack = [[None, start]]
     visited = []
     step = 0
     history = {}
-
-    # print('visited: ', visited)
-    # print("stack: ", stack)
-    # print('\n')
     
     while len(stack):
         current = stack.pop(0)
@@ -46,17 +50,6 @@ def breadth_first_search(start, graph, search):
         }
         step += 1
 
-        # print('current: ', current)
-        # print('visited: ', visited)
-        # print("stack: ", stack)
-        # print('\n')
-
-    # print('current: ', current)
-    # pprint.pprint(visited)
-    # print("stack: ", stack)
-    # pprint.pprint(history)
-    # print('\n')
-
     back_path = backwards_search(visited)
-    # print('BP: ', back_path)
+
     return history, back_path
