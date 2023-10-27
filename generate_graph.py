@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 def generate_random_graph(number_of_nodes, spread):
     # number_of_nodes - number of nodes that we want to be in graph
     # spread - max number of branches coming out of one node
+    
     # r - random number of edges from every node
     # nodes - table with decresing numbers
     # stack - stack to store nodes that were not branched yet

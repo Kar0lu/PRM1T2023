@@ -1,5 +1,5 @@
 from generate_graph import generate_random_graph
-from breadth_first_search import breadth_first_search
+from search_algorythms import breadth_first_search, depth_first_search
 from my_animations import search_animation
 import pprint
 
@@ -8,7 +8,7 @@ NUMBER_OF_NODES = 50
 NUMBER_OF_EDGES_PER_NODE = 4
 START_NODE = 5
 SEARCH_FOR_NODE = 21
-SPEED = 100
+SPEED = 500
 
 # Execution Section
 random_graph = generate_random_graph(NUMBER_OF_NODES, NUMBER_OF_EDGES_PER_NODE)

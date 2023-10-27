@@ -20,6 +20,7 @@ def breadth_first_search(start, graph, search):
     # start - node to start
     # graph - graph that we're searching
     # search - node to find
+
     # stack - stack of nodes that algorythm will check
     # visited - stack nodes that algorythm checked
     # step - variable to store information about steps of algorythm, used in history
@@ -44,6 +45,47 @@ def breadth_first_search(start, graph, search):
         except ValueError:
             pass
         stack.extend(tbv)
+        history[step] = {
+            'current': current[1],
+            'tbv': tbv
+        }
+        step += 1
+
+    back_path = backwards_search(visited)
+
+    return history, back_path
+
+
+
+def depth_first_search(start, graph, search):
+    # start - node to start
+    # graph - graph that we're searching
+    # search - node to find
+    
+    # stack - stack of nodes that algorythm will check
+    # visited - stack nodes that algorythm checked
+    # step - variable to store information about steps of algorythm, used in history
+    # history - dictionary with information about algorythm on every step
+
+    stack = [[None, start]]
+    visited = []
+    step = 0
+    history = {}
+    
+    while len(stack):
+        current = stack.pop(0)
+        visited.append(current)
+        if current[1] == search:
+            history[step] = {
+                'current': current[1]
+            }
+            break
+        tbv = [[current[1], x] for x in list(graph.neighbors(current[1]))]
+        try:
+            tbv.remove([current[1], current[0]])
+        except ValueError:
+            pass
+        stack[:0] = tbv
         history[step] = {
             'current': current[1],
             'tbv': tbv
