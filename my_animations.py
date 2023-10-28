@@ -23,8 +23,11 @@ def search_animation(graph, hist, bp, speed, seed, title, geometry):
     def update(frame):
         ax.clear()
         if frame >= len(hist):
-            node_colors[bp[frame-len(hist)]] = 'purple'
-            plt.title(f'Finished in {len(hist)} steps\nDistance: {len(bp)-1}')
+            if(bp == [None]):
+                plt.title(f'Finished in {len(hist)} steps\nNode not found')
+            else:
+                node_colors[bp[frame-len(hist)]] = 'purple'
+                plt.title(f'Finished in {len(hist)} steps\nDistance: {len(bp)-1}')
 
             legend_labels = [unvisited[0], stack[0], visited[0]]
             legend_colors = ['lightgray', 'gray', 'red']

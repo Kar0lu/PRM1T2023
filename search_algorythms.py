@@ -41,7 +41,8 @@ def breadth_first_search(start, graph, search):
                 'stack': len(stack),
                 'visited': len(visited)
             }
-            break
+            back_path = backwards_search(visited)
+            return history, back_path
         tbv = [[current[1], x] for x in list(graph.neighbors(current[1]))]
         try:
             tbv.remove([current[1], current[0]])
@@ -56,11 +57,7 @@ def breadth_first_search(start, graph, search):
         }
         step += 1
 
-    back_path = backwards_search(visited)
-
-    return history, back_path
-
-
+    return history, [None]
 
 def depth_first_search(start, graph, search):
     # start - node to start
@@ -87,7 +84,8 @@ def depth_first_search(start, graph, search):
                 'stack': len(stack),
                 'visited': len(visited)
             }
-            break
+            back_path = backwards_search(visited)
+            return history, back_path
         tbv = [[current[1], x] for x in list(graph.neighbors(current[1]))]
         try:
             tbv.remove([current[1], current[0]])
@@ -102,6 +100,4 @@ def depth_first_search(start, graph, search):
         }
         step += 1
 
-    back_path = backwards_search(visited)
-
-    return history, back_path
+    return history, [None]
