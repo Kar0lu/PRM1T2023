@@ -36,7 +36,10 @@ def breadth_first_search(start, graph, search):
         visited.append(current)
         if current[1] == search:
             history[step] = {
-                'current': current[1]
+                'current': current[1],
+                'tbv': [],
+                'stack': len(stack),
+                'visited': len(visited)
             }
             break
         tbv = [[current[1], x] for x in list(graph.neighbors(current[1]))]
@@ -47,7 +50,9 @@ def breadth_first_search(start, graph, search):
         stack.extend(tbv)
         history[step] = {
             'current': current[1],
-            'tbv': tbv
+            'tbv': tbv,
+            'stack': len(stack),
+            'visited': len(visited)
         }
         step += 1
 
@@ -77,7 +82,10 @@ def depth_first_search(start, graph, search):
         visited.append(current)
         if current[1] == search:
             history[step] = {
-                'current': current[1]
+                'current': current[1],
+                'tbv': [],
+                'stack': len(stack),
+                'visited': len(visited)
             }
             break
         tbv = [[current[1], x] for x in list(graph.neighbors(current[1]))]
@@ -88,7 +96,9 @@ def depth_first_search(start, graph, search):
         stack[:0] = tbv
         history[step] = {
             'current': current[1],
-            'tbv': tbv
+            'tbv': tbv,
+            'stack': len(stack),
+            'visited': len(visited)
         }
         step += 1
 
