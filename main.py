@@ -11,6 +11,13 @@ SEARCH_FOR_NODE = 30
 SPEED = 100
 SEED = 10
 
+assert isinstance(NUMBER_OF_NODES, int) and NUMBER_OF_NODES > 0, "NUMBER_OF_NODES has to be intiger greater than 0"
+assert isinstance(NUMBER_OF_EDGES_PER_NODE, int) and NUMBER_OF_EDGES_PER_NODE > 0, "NUMBER_OF_EDGES_PER_NODE has to be intiger greater than 0"
+assert isinstance(START_NODE, int) and START_NODE >= 0, "START_NODE has to be intiger greater or equal 0"
+assert isinstance(SEARCH_FOR_NODE, int) and SEARCH_FOR_NODE >= 0, "SEARCH_FOR_NODE has to be intiger greater or equal 0"
+assert isinstance(SPEED, int) and SPEED > 0, "SPEED has to be intiger greater than 0"
+assert isinstance(SEED, int) and SEED >= 0, "SEED has to be intiger greater or equal 0"
+
 # Execution Section
 random_graph = generate_random_graph(NUMBER_OF_NODES, NUMBER_OF_EDGES_PER_NODE, SEED)
 
