@@ -3,6 +3,11 @@
 Projekt ma na celu zobrazowanie oraz porównanie następujących algorytmów przeszukiwania grafów:
 - Depth-first search (DFS)
 - Breadth-first search (BFS)
+## Wymagania
+```
+matplotlib==3.7.1
+networkx==3.1
+```
 ## Sposób porównania
 Program tworzy animację obrazującą działanie powyższych algorytmów na (pseudo)losowo generowanym grafie. Animacja przechodzi krok po kroku przez algorytm, kolorując odpowiednie węzły w zależności od tego, co się aktualnie z nimi dzieje. Ponad to na wykresie przedstawione są informacje:
 - liczba nieodkrytych węzłów
