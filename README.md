@@ -8,6 +8,19 @@ Projekt ma na celu zobrazowanie oraz porównanie następujących algorytmów prz
 matplotlib==3.7.1
 networkx==3.1
 ```
+## Tworzenie środowiska wirtualnego
+### Windows
+```
+python -m venv myenv
+myenv\Scripts\activate
+pip install matplotlib==3.7.1 networkx==3.1
+```
+### Linux/ macOS
+```
+python -m venv myenv
+source myenv/bin/activate
+pip install matplotlib==3.7.1 networkx==3.1
+```
 ## Sposób porównania
 Program tworzy animację obrazującą działanie powyższych algorytmów na (pseudo)losowo generowanym grafie. Animacja przechodzi krok po kroku przez algorytm, kolorując odpowiednie węzły w zależności od tego, co się aktualnie z nimi dzieje. Ponad to na wykresie przedstawione są informacje:
 - liczba nieodkrytych węzłów
